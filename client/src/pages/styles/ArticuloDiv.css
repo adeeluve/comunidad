@@ -1,0 +1,123 @@
+/* Estilo para el contenedor del carrusel */
+.carousel-container {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+/* Estilo para el carrusel */
+.carousel {
+  position: relative;
+  align-items: center;
+  border: 1px solid grey;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  overflow: hidden;
+}
+
+.articulo {
+  border: 1px solid blue;
+  width: 100%;
+  text-align: center;
+  padding: 15px;
+  margin-top: 50px;
+  margin-bottom: 15px;
+}
+
+/* Estilo para los slides */
+.slides {
+  display: flex;
+  transition: transform 0.3s ease-in-out;
+}
+
+.slide {
+  flex: 0 0 100%;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Estilo para el slide activo */
+.slide.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+/* Estilo para los puntos (indicadores) */
+.dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  padding: 20px;
+}
+
+.dot {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: black;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+/* Estilo para el punto activo */
+.dot.active {
+  background-color: red;
+}
+
+/* Estilo para los botones de navegación */
+.prev-btn,
+.next-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 10px;
+  font-size: 20px;
+  border: none;
+  background: transparent;
+  color: black;
+  cursor: pointer;
+}
+
+.next-btn {
+  right: 0;
+}
+
+/* Media Query para pantallas pequeñas, como smartphones */
+@media screen and (max-width: 767px) {
+  .carousel-container {
+      flex-direction: column;
+  }
+
+  .articulo {
+      margin-top: 20px;
+      margin-bottom: 10px;
+      padding: 10px; /* Ajustar el padding para pantallas pequeñas */
+  }
+
+  .dot {
+      width: 10px; /* Ajustar el tamaño de los puntos para pantallas pequeñas */
+      height: 10px;
+      margin: 0 3px; /* Ajustar el margen entre los puntos para pantallas pequeñas */
+  }
+
+  .prev-btn,
+  .next-btn {
+      padding: 5px; /* Ajustar el padding de los botones para pantallas pequeñas */
+      font-size: 16px; /* Ajustar el tamaño de fuente de los botones para pantallas pequeñas */
+  }
+}
+
+/* Media Query para pantallas medianas, como tablets */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  /* Ajusta los estilos necesarios para pantallas medianas aquí */
+}
+
+/* Media Query para pantallas grandes, como computadoras de escritorio */
+@media screen and (min-width: 1024px) {
+  /* Ajusta los estilos necesarios para pantallas grandes aquí */
+}
